@@ -55,6 +55,8 @@ inputs:
     description: 'If yes, logs output along each step.'
   wait:
     description: 'If "true", for remote runs, waits for all audit results to be returned, otherwise URLs are only enqueued.'
+  psiKey:
+    description: 'PageSpeed Insights API key.'
 runs:
   using: 'node12'
   main: 'index.js'

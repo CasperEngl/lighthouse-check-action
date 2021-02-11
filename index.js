@@ -3,7 +3,7 @@ const get = require('lodash.get');
 const github = require('@actions/github');
 const { lighthouseCheck } = require('@foo-software/lighthouse-check');
 
-const formatInput = input => {
+const formatInput = (input) => {
   if (input === 'true') {
     return true;
   }
@@ -24,7 +24,7 @@ const formatInput = input => {
     const urls = formatInput(core.getInput('urls'));
     const extraHeaders = core.getInput('extraHeaders');
     const commentUrl = core.getInput('commentUrl');
-    const prApiUrl =  get(github, 'context.payload.pull_request.url');
+    const prApiUrl = get(github, 'context.payload.pull_request.url');
 
     const results = await lighthouseCheck({
       author: formatInput(core.getInput('author')),
@@ -36,9 +36,7 @@ const formatInput = input => {
       branch: formatInput(core.getInput('branch')),
       configFile: formatInput(core.getInput('configFile')),
       emulatedFormFactor: formatInput(core.getInput('emulatedFormFactor')),
-      extraHeaders: !extraHeaders
-        ? undefined
-        : JSON.parse(extraHeaders),
+      extraHeaders: !extraHeaders ? undefined : JSON.parse(extraHeaders),
       locale: formatInput(core.getInput('locale')),
       help: formatInput(core.getInput('help')),
       outputDirectory: formatInput(core.getInput('outputDirectory')),
@@ -57,6 +55,7 @@ const formatInput = input => {
       urls: !urls ? undefined : urls.split(','),
       verbose: formatInput(core.getInput('verbose')),
       wait: formatInput(core.getInput('wait')),
+      psiKey: formatInput(core.getInput('psiKey')),
 
       // static
       isGitHubAction: true,
