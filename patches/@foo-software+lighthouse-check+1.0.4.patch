@@ -1,0 +1,24 @@
+diff --git a/node_modules/@foo-software/lighthouse-check/dist/localLighthouse.js b/node_modules/@foo-software/lighthouse-check/dist/localLighthouse.js
+index 99e3a4e..5f0a465 100644
+--- a/node_modules/@foo-software/lighthouse-check/dist/localLighthouse.js
++++ b/node_modules/@foo-software/lighthouse-check/dist/localLighthouse.js
+@@ -42,7 +42,8 @@ const localLighthouse = async ({
+   overrides,
+   throttling: throttlingParam,
+   throttlingMethod,
+-  url
++  url,
++  psiKey
+ }) => {
+   // if desktop device, and no throttling param specified, use the
+   // appropriate throttling
+@@ -89,7 +90,8 @@ const localLighthouse = async ({
+       })
+     },
+     outputDirectory,
+-    url
++    url,
++    psiKey
+   });
+   const scores = getScoresFromFloat({
+     accessibility: (0, _lodash.default)(result, 'categories.accessibility.score'),
