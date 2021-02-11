@@ -1,4 +1,4 @@
-name: 'Lighthouse Check'
+name: 'Lighthouse Check with PageSpeed Insights'
 description: 'GitHub Action for running one or multiple Lighthouse audits featuring PR comments, Slack notifications and more!'
 inputs:
   apiToken:
