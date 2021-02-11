@@ -52,7 +52,8 @@
   "dependencies": {
     "@actions/core": "^1.1.1",
     "@actions/github": "^1.1.0",
-    "@foo-software/lighthouse-check": "1.0.4",
+    "@foo-software/lighthouse-check": "^2.0.3",
+    "@foo-software/lighthouse-persist": "^1.1.6",
     "express": "^4.17.1",
     "lodash.get": "^4.4.2",
     "postinstall-postinstall": "^2.1.0"
